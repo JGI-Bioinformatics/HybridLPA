@@ -1,24 +1,13 @@
 # HybridLPA
 
-**Sparc** (refer to [paper](https://academic.oup.com/bioinformatics/article/35/5/760/5078476) and [sources](https://bitbucket.org/LizhenShi/sparc/src/master/)) is capable of forming accurate clusters in terms of both purity and completeness on the long reads. However, it suffers from the under clustering issue on the illumina short reads. In order to solve this issue, we leverage the long connections of the long reads to help clustering the short reads. We optimized original LPA for clustering metagenomic long and short reads. In the HybridLPA, we only allow the long reads labels to propogate throughout the read graph. This site provides MPI/UPC++ based implementation of **HybridLPA**.
+**SpaRC** (refer to [paper](https://academic.oup.com/bioinformatics/article/35/5/760/5078476) and [sources](https://bitbucket.org/LizhenShi/sparc/src/master/)) is capable of forming accurate clusters in terms of both purity and completeness on the long reads. However, it suffers from the under clustering issue on the illumina short reads. In order to solve this issue, we leverage the long connections of the long reads to help clustering the short reads. We optimized original LPA for clustering metagenomic long and short reads. In the HybridLPA, we only allow the long reads labels to propogate throughout the read graph. This site provides MPI/UPC++ based implementation of **HybridLPA**.
 
-Four versions are provided: *mrmpi*, *mimir*, *mpi* and *upcxx*. Each version provides a few programs that coresponding the to steps in [Sparc](https://bitbucket.org/LizhenShi/sparc/src/master/README.md) .
-
-**Sparc_mrmpi** utilized map-reduce lib of [MapReduce-MPI Library](https://mapreduce.sandia.gov/). Since Sparc is based on [Apache Spark](https://spark.apache.org/) whose foundation is map-reduce, this is a straightforward "translation".
-
-**Sparc_mimir** was written based on another MPI map-reduce lib, [Mimir](https://github.com/TauferLab/Mimir), which performs better than sparc_mrmpi. It is also a straightforward "translation".
-
-**Sparc_mpi** is a re-implementation that based on MPI and [ZMQ](https://zeromq.org/) using client-server p2p communication. It preforms much better than sparc_mrmpi and sparc_mimir.
-
-**Sparc_upcxx** is a re-implementation that uses [UPC++](https://bitbucket.org/berkeleylab/upcxx/wiki/Home). It performs similar or even better than sparc_mpi. However I find it might be tricky to run a upcxx program since the data transfer is hidden from users. I found failure sometimes when lots of rpc calls were performed asynchronously. 
-
-When running the programs, make sure there are enough nodes to hold all the data in memory. Although some programs support storing temporary data in disk, but it will make the progress really slow.
 
 ### Example Runs
 
 Please find sbatch scripts of sample runs on [LAWRENCIUM](https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium) in [misc/example](misc/example) folder.
 
-
+When running the programs, make sure there are enough nodes to hold all the data in memory. Although some programs support storing temporary data in disk, but it will make the progress quite slow.
 
 ## Installation
 
