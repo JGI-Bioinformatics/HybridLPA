@@ -54,16 +54,15 @@ Also remember set UPCXX_NETWORK to your network, otherwise smp is most likely be
 
 
 ## Usages
+The HybridLPA is designed for partitioning the read graph. So a read graph is needed to be constructed before using the HybridLPA. There are two ways to construct the read graph: 1) Using [SpaRC] (https://bitbucket.org/LizhenShi/sparc/src/master/README.md); 2) To make the running environment consistent, we also incoporate the steps used to form read graph in SpaRC in this repository. 
 
 
-Similar to [Sparc](https://bitbucket.org/LizhenShi/sparc/src/master/README.md),  given a sequence file the flow of analysis includes 4 steps. For each program use "-h" or "--help" option to get help.
+### Clustering
 
-### LPA Clustering
-
-Find clusters by Label Propagation Algorithm. 
+Forming clusters using HybridLPA on the mixture of long and short reads. 
 In this step there are two options: PowerGraph LPA or *lpav1_mpi/upcxx*. 
 
-*lpav1_mpi/upcxx* is my implementation of LPA in MPI or UPC++, which is build in the corresponding targets.
+*lpav1_mpi/upcxx* is our implementation of LPA in MPI or UPC++, which is build in the corresponding targets.
 
 PowerGraph(https://github.com/jegonzal/PowerGraph) also provide LPA program which can be got from github.
 
@@ -96,7 +95,7 @@ For example for mpi version:
 ```
 
 
-### Kmer-Reads-Mapping
+### Kmer-Reads-Mapping (optional)
 
 Find shared reads for kmers with kmer_read_mapping_$SURFIX where $SURFIX means mrmpi, mimir, mpi or upcxx. 
 
@@ -121,7 +120,7 @@ For example for mpi version:
 
 ```
 
-### Edge Generating
+### Edge Generating (optional)
 
 Generate graph edges using edge_generating_$SURFIX where $SURFIX means mrmpi, mimir, mpi or upcxx. 
 
