@@ -55,7 +55,20 @@ Also remember set UPCXX_NETWORK to your network, otherwise smp is most likely be
 
 ## Usages
 
+
 Similar to [Sparc](https://bitbucket.org/LizhenShi/sparc/src/master/README.md),  given a sequence file the flow of analysis includes 4 steps. For each program use "-h" or "--help" option to get help.
+
+### LPA Clustering
+
+Find clusters by Label Propagation Algorithm. 
+In this step there are two options: PowerGraph LPA or *lpav1_mpi/upcxx*. 
+
+*lpav1_mpi/upcxx* is my implementation of LPA in MPI or UPC++, which is build in the corresponding targets.
+
+PowerGraph(https://github.com/jegonzal/PowerGraph) also provide LPA program which can be got from github.
+
+*Remark:* Since this step is purely graph clustering, actually any graph clustering algorithms can be used providing it can work on graphs of billions edges.
+
 
 ### Kmer Counting (optional)
 
@@ -133,16 +146,7 @@ For example for mpi version:
     
 ```
 
-### LPA Clustering
 
-Find clusters by Label Propagation Algorithm. 
-In this step there are two options: PowerGraph LPA or *lpav1_mpi/upcxx*. 
-
-*lpav1_mpi/upcxx* is my implementation of LPA in MPI or UPC++, which is build in the corresponding targets.
-
-PowerGraph(https://github.com/jegonzal/PowerGraph) also provide LPA program which can be got from github.
-
-*Remark:* Since this step is purely graph clustering, actually any graph clustering algorithms can be used providing it can work on graphs of billions edges.
 
 ## Example Runs
 
