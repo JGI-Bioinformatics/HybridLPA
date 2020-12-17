@@ -16,7 +16,7 @@ When running the programs, make sure there are enough nodes to hold all the data
 First clone the code
 
 ```
-    git clone https://github.com/Lizhen0909/sparc-mpi.git
+    git clone https://github.com/JGI-Bioinformatics/HybridLPA.git
     cd sparc-mpi && git submodule update --init --recursive
 ```
 
