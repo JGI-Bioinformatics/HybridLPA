@@ -17,45 +17,9 @@ First clone the code
 
 ```
     git clone https://github.com/JGI-Bioinformatics/HybridLPA.git
-    cd sparc-mpi && git submodule update --init --recursive
+    cd HybridLPA && git submodule update --init --recursive
 ```
-
-All the versions are independent from each other, you may choose to only build the version that you are interested in.
-
-
-### Mimir Version
-
-#### Requires
-* Linux 
-* mpi >= 3.0
-* c++ standard >= 11 
-* autoconf>= 2.67
-* automake >= 1.15
-* libtool >= 2.4.4
-
-
-#### Build
-```
-    mkdir build && cd build
-    cmake -DBUILD_SPARC_MIMIR=ON ..
-    make sparc_mimir
-```
-
-### MRMPI Version
-
-#### Requires
-* Linux 
-* mpi >= 3.0
-* c++ standard >= 11 
-
-
-#### Build
-```
-    mkdir build && cd build
-    cmake -DBUILD_SPARC_MRMPI=ON ..
-    make sparc_mrmpi
-
-```
+The two versions are independent from each other, you may choose to only build the version that you are interested in.
 
 
 ### MPI Version
