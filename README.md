@@ -3,11 +3,7 @@
 **SpaRC** (refer to [paper](https://academic.oup.com/bioinformatics/article/35/5/760/5078476) and [sources](https://bitbucket.org/LizhenShi/sparc/src/master/)) is capable of forming accurate clusters in terms of both purity and completeness on the long reads. However, it suffers from the under clustering issue on the illumina short reads. In order to solve this issue, we leverage the long connections of the long reads to help clustering the short reads. We optimized original LPA for clustering metagenomic long and short reads. In the HybridLPA, we only allow the long reads labels to propogate throughout the read graph. This site provides MPI/UPC++ based implementation of **HybridLPA**.
 
 
-### Example Runs
 
-Please find sbatch scripts of sample runs on [LAWRENCIUM](https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium) in [misc/example](misc/example) folder.
-
-When running the programs, make sure there are enough nodes to hold all the data in memory. Although some programs support storing temporary data in disk, but it will make the progress quite slow.
 
 ## Installation
 
@@ -147,4 +143,10 @@ In this step there are two options: PowerGraph LPA or *lpav1_mpi/upcxx*.
 PowerGraph(https://github.com/jegonzal/PowerGraph) also provide LPA program which can be got from github.
 
 *Remark:* Since this step is purely graph clustering, actually any graph clustering algorithms can be used providing it can work on graphs of billions edges.
+
+## Example Runs
+
+Please find sbatch scripts of sample runs on [LAWRENCIUM](https://sites.google.com/a/lbl.gov/high-performance-computing-services-group/lbnl-supercluster/lawrencium) in [misc/example](misc/example) folder.
+
+When running the programs, make sure there are enough nodes to hold all the data in memory. Although some programs support storing temporary data in disk, but it will make the progress quite slow.
 
