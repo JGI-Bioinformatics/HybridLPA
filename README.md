@@ -1,6 +1,6 @@
-# Sparc in MPI
+# HybridLPA
 
-This site provides MPI based implementation of **Sparc** (refer to [paper](https://academic.oup.com/bioinformatics/article/35/5/760/5078476) and [sources](https://bitbucket.org/LizhenShi/sparc/src/master/)).
+**Sparc** (refer to [paper](https://academic.oup.com/bioinformatics/article/35/5/760/5078476) and [sources](https://bitbucket.org/LizhenShi/sparc/src/master/)) is capable of forming accurate clusters in terms of both purity and completeness on the long reads. However, it suffers from the under clustering issue on the illumina short reads. In order to solve this issue, we leverage the long connections of the long reads to help clustering the short reads. We optimized original LPA for clustering metagenomic long and short reads. In the HybridLPA, we only allow the long reads labels to propogate throughout the read graph. This site provides MPI/UPC++ based implementation of **HybridLPA**.
 
 Four versions are provided: *mrmpi*, *mimir*, *mpi* and *upcxx*. Each version provides a few programs that coresponding the to steps in [Sparc](https://bitbucket.org/LizhenShi/sparc/src/master/README.md) .
 
